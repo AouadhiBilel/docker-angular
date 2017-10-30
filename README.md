@@ -1,27 +1,22 @@
-# DockerAngularTest
+## Angular + Docker application seed 
+The angular app was generated with Angular CLI version 1.4.9
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
+### Local Development Features
+- **One line startup**: Use docker-compose up for single line build and run of local development server
+- **Edit code locally while it runs in container**: docker-compose uses proper bind-mounts of host source code into container so you can edit locally while running code in Linux (node) container.
 
-## Development server
+### Assumptions
+- You have Docker and Docker-Compose installed
+- You want to use Docker for local development
+- You want an easy environment setup, usin local editors,local code repo while server runs in a container
+- You use `docker-compose` for local development only (docker-compose was never intended to be a production deployment tool anyway).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Getting Started
+To start local development you would run `docker-compose up`, it would:
+- Build custom local image enabled for development
+- Start container from that image with port 4200 open (on localhost)
+- Mounts the pwd to the app directory (/usr/src/app) in container
+- **Be sure to use `docker-compose down` to clean up after you're done dev'ing  
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
