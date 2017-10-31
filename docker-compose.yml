@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  ng-docker:
+    image: docker-angular-test:dev
+    build: .
+    ports:
+      - "4200:4200"
+    volumes:
+      - .:/usr/src/app
+
+
+
