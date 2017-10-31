@@ -16,7 +16,7 @@ To start local development you would run `docker-compose up`, it would:
 - Build custom local image enabled for development
 - Start container from that image with port 4200 open (on localhost)
 - Mounts the pwd to the app directory (/usr/src/app) in container
-- **Be sure to use `docker-compose down` to clean up after you're done dev'ing  
+- **Be sure to use `docker-compose down` to clean up after you're done dev'ing**  
 
 
 
