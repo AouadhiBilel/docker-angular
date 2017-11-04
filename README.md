@@ -4,6 +4,7 @@ The angular app was generated with Angular CLI version 1.4.9
 ### Local Development Features
 - **One line startup**: Use docker-compose up for single line build and run of local development server
 - **Edit code locally while it runs in container**: docker-compose uses proper bind-mounts of host source code into container so you can edit locally while running code in Linux (node) container.
+- **Small image and quick re-builds**:Copying package.json and running `npm install` and `npm cache clean` before copying the source code saves us build time and keeps the container clean.
 
 ### Assumptions
 - You have Docker and Docker-Compose installed
