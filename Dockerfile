@@ -11,7 +11,7 @@ EXPOSE $PORT
 
 HEALTHCHECK CMD curl -fs http://localhost:$PORT || exit 1
  
-VOLUME /usr/src/app
+
 
 WORKDIR /usr/src/app
 COPY package.json /usr/src/app
@@ -20,6 +20,7 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 
 COPY . /usr/src/app
+VOLUME /usr/src/app
 
 CMD ["npm", "start"]
 
