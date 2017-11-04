@@ -13,11 +13,12 @@ HEALTHCHECK CMD curl -fs http://localhost:$PORT || exit 1
  
 VOLUME /usr/src/app
 
+WORKDIR /usr/src/app
 COPY package.json /usr/src/app
 RUN npm install && npm cahce clean --force
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
-WORKDIR /usr/src/app
+
 COPY . /usr/src/app
 
 CMD ["npm", "start"]
