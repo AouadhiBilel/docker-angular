@@ -3,11 +3,23 @@ version: '3'
 services:
   ng-docker:
     image: docker-angular-test:dev
-    build: .
+    build: 
+      context: .
+      args:
+        - NODE_ENV=development
     ports:
       - "4200:4200"
     volumes:
       - .:/usr/src/app
+        #this is to prevent host node_modules from accidentally getting mounted in container 
+        #in case you want to use node/npm both outside container for test/lint etc. and also inside
+        #container this will overwrite the default node_modules directory in container so it won't 
+        #conflict with our /usr/src/app/node_modules location. Thanks to PR from @brnluiz/@BretFisher
+      - notused:/usr/src/app/node_modules  
+    environment:
+      - NODE_ENV=development
 
+volumes:
+  notused:
 
 
