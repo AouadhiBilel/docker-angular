@@ -15,7 +15,7 @@ VOLUME /usr/src/app
 
 WORKDIR /usr/src/app
 COPY package.json /usr/src/app
-RUN npm install && npm cahce clean --force
+RUN npm install && npm cache clean --force
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 
